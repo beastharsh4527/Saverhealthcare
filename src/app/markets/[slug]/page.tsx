@@ -30,12 +30,12 @@ export default async function MarketPage({ params }: { params: Promise<{ slug: s
     <>
       <PageHero
         eyebrow={`${m.n} · ${m.badge}`}
-        title={<>{m.country}: <em className="text-mint">{m.title.toLowerCase()}</em></>}
+        title={<>{m.country}: <em className="text-brand">{m.title.toLowerCase()}</em></>}
         sub={m.desc}
         crumbs={[{ label: "Markets", href: "/markets" }, { label: m.country }]}
       >
         <ul className="flex flex-wrap gap-2">
-          {m.tags.map((t) => <li key={t} className="chip border-mint/40 text-mint">{t}</li>)}
+          {m.tags.map((t) => <li key={t} className="chip border-mint/40 text-brand">{t}</li>)}
         </ul>
       </PageHero>
 
@@ -73,10 +73,10 @@ export default async function MarketPage({ params }: { params: Promise<{ slug: s
               </div>
               {office && (
                 <div className="grid gap-2 rounded-3xl bg-ink p-7 text-paper">
-                  <span className="font-mono text-[0.65rem] tracking-[0.2em] text-mint uppercase">{office.tag} office</span>
+                  <span className="font-mono text-[0.65rem] tracking-[0.2em] text-brand uppercase">{office.tag} office</span>
                   <p className="font-display text-2xl">{office.region}</p>
                   <address className="text-sm text-fog not-italic">{office.address[0]}, {office.address[1]}</address>
-                  <p className="text-sm">{office.lines[0].label}: <span className="text-mint">{office.lines[0].value}</span></p>
+                  <p className="text-sm">{office.lines[0].label}: <span className="text-brand">{office.lines[0].value}</span></p>
                 </div>
               )}
             </div>

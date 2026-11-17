@@ -37,14 +37,14 @@ export function Apply({ initialRole = "doctor", showForm = true }: { initialRole
                   onClick={() => setRole(r.id)}
                   className={cn(
                     "group flex items-center justify-between rounded-2xl border px-6 py-5 text-left transition-colors duration-300",
-                    role === r.id ? "border-brand bg-ink text-paper" : "border-ink/12 bg-cream hover:border-brand/50",
+                    role === r.id ? "border-brand bg-brand/8 shadow-sm" : "border-ink/12 bg-white hover:border-brand/50",
                   )}
                 >
                   <span className="flex items-baseline gap-4">
-                    <span className={cn("font-mono text-xs", role === r.id ? "text-mint" : "text-brand")}>{r.n}</span>
+                    <span className={cn("font-mono text-xs", "text-brand")}>{r.n}</span>
                     <span className="font-display text-2xl">{r.label}</span>
                   </span>
-                  <span className={cn("grid h-6 w-6 place-items-center rounded-full border transition-colors", role === r.id ? "border-mint bg-mint text-ink" : "border-ink/20")}>
+                  <span className={cn("grid h-6 w-6 place-items-center rounded-full border transition-colors", role === r.id ? "border-brand bg-brand text-white" : "border-ink/20")}>
                     {role === r.id && <Check className="h-3.5 w-3.5" aria-hidden />}
                   </span>
                 </button>
@@ -54,7 +54,7 @@ export function Apply({ initialRole = "doctor", showForm = true }: { initialRole
             <AnimatePresence mode="wait">
               <motion.p
                 key={role}
-                className="rounded-2xl bg-paper-2/80 p-6 leading-relaxed text-moss"
+                className="rounded-2xl bg-white p-6 leading-relaxed text-moss shadow-sm"
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -8 }}
@@ -74,7 +74,7 @@ export function Apply({ initialRole = "doctor", showForm = true }: { initialRole
             </ul>
           </div>
 
-          <div id="apply-panel" role="tabpanel" aria-labelledby={`apply-tab-${role}`} className="rounded-3xl border border-ink/10 bg-cream p-7 md:p-9">
+          <div id="apply-panel" role="tabpanel" aria-labelledby={`apply-tab-${role}`} className="rounded-3xl border border-ink/10 bg-white p-7 shadow-sm md:p-9">
             {showForm ? (
               <AnimatePresence mode="wait">
                 <motion.div key={role} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} transition={{ duration: 0.3 }}>

@@ -1,12 +1,13 @@
 "use client";
 
 import { useRef, type ElementType, type ReactNode } from "react";
-import { gsap, SplitText, useGSAP, prefersReducedMotion } from "@/lib/gsap";
+import { gsap, useGSAP, prefersReducedMotion } from "@/lib/gsap";
 import { cn } from "@/lib/utils";
 
 /**
- * Line-masked word reveal. Animates TRANSFORM only (never opacity from 0),
- * so the text paints on first frame and LCP is unaffected.
+ * Calm heading reveal (client feedback: fewer animations) — one gentle
+ * transform-only rise, no per-word stagger. LCP-safe: never animates from opacity 0
+ * on anything, it only translates inside a mask for the hero.
  */
 export function SplitReveal({
   as: Tag = "h2",
@@ -26,23 +27,13 @@ export function SplitReveal({
   useGSAP(
     () => {
       if (!ref.current || prefersReducedMotion()) return;
-      const split = SplitText.create(ref.current, {
-        type: "lines,words",
-        linesClass: "split-line",
-        wordsClass: "split-word",
-        autoSplit: true,
-        onSplit: (self) =>
-          gsap.from(self.words, {
-            yPercent: 110,
-            rotate: 2,
-            duration: 1.2,
-            stagger: 0.035,
-            delay,
-            ease: "expo.out",
-            scrollTrigger: onScroll ? { trigger: ref.current, start: "top 88%", once: true } : undefined,
-          }),
+      gsap.from(ref.current, {
+        y: 34,
+        duration: 1,
+        delay,
+        ease: "expo.out",
+        scrollTrigger: onScroll ? { trigger: ref.current, start: "top 88%", once: true } : undefined,
       });
-      return () => split.revert();
     },
     { scope: ref },
   );

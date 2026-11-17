@@ -138,7 +138,7 @@ export default function GlobeScene() {
   }, []);
 
   return (
-    <div ref={wrap} className="h-full w-full" data-cursor="Drag" aria-label="Interactive globe showing placement routes from Dhaka to London, New York and Toronto" role="img">
+    <div ref={wrap} className="h-full w-full" aria-label="Interactive globe showing placement routes from Dhaka to London, New York and Toronto" role="img">
       <Canvas camera={{ position: [0, 0.6, 5.4], fov: 42 }} dpr={[1, 1.75]} frameloop={active ? "always" : "never"} gl={{ antialias: true, alpha: true }}>
         <Scene active={active} />
         <OrbitControls enableZoom={false} enablePan={false} rotateSpeed={0.45} />

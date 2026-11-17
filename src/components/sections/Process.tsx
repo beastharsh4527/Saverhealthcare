@@ -35,7 +35,7 @@ export function Process() {
         });
         gsap.fromTo(el.querySelector(".proc-dot"), { scale: 0.4, backgroundColor: "#4b5f53" }, {
           scale: 1,
-          backgroundColor: "#5fd69a",
+          backgroundColor: "#1f7a3a",
           duration: 0.5,
           scrollTrigger: { trigger: el, start: "top 65%", toggleActions: "play none none reverse" },
         });

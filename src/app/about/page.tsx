@@ -17,7 +17,7 @@ export default function AboutPage() {
     <>
       <PageHero
         eyebrow={about.eyebrow}
-        title={<>Bridging <em className="text-mint">talent</em> &amp; need since 2020.</>}
+        title={<>Bridging <em className="text-brand">talent</em> &amp; need since 2020.</>}
         sub={about.p1}
         crumbs={[{ label: "About" }]}
       />

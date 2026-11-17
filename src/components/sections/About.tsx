@@ -46,7 +46,7 @@ export function About() {
             </div>
           </div>
 
-          <div className="absolute top-6 -left-3 grid h-24 w-24 animate-spin-slow place-items-center md:-left-6">
+          <div className="absolute top-6 -left-3 grid h-24 w-24 place-items-center md:-left-6">
             <svg viewBox="0 0 100 100" className="h-full w-full text-brand" aria-hidden>
               <defs><path id="circ2" d="M 50 50 m -36 0 a 36 36 0 1 1 72 0 a 36 36 0 1 1 -72 0" /></defs>
               <circle cx="50" cy="50" r="49" className="fill-paper" />

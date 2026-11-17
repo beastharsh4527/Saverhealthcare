@@ -12,17 +12,6 @@ export function Team() {
   const [idx, setIdx] = useState(0);
   const m = team[idx];
 
-  const tilt = (e: React.MouseEvent<HTMLDivElement>) => {
-    const el = e.currentTarget;
-    const r = el.getBoundingClientRect();
-    const x = (e.clientX - r.left) / r.width - 0.5;
-    const y = (e.clientY - r.top) / r.height - 0.5;
-    el.style.transform = `perspective(900px) rotateX(${-y * 7}deg) rotateY(${x * 9}deg)`;
-  };
-  const untilt = (e: React.MouseEvent<HTMLDivElement>) => {
-    e.currentTarget.style.transform = "perspective(900px) rotateX(0deg) rotateY(0deg)";
-  };
-
   return (
     <section className="bg-cream py-24 md:py-32">
       <div className="container-x grid gap-14">
@@ -30,15 +19,15 @@ export function Team() {
 
         <div className="grid items-start gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           {/* Photo */}
-          <div onMouseMove={tilt} onMouseLeave={untilt} className="relative transition-transform duration-300 ease-out motion-reduce:!transform-none" style={{ transformStyle: "preserve-3d" }}>
+          <div className="relative">
             <AnimatePresence mode="wait">
               <motion.div
                 key={m.id}
                 className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-ink"
-                initial={{ clipPath: "circle(12% at 50% 50%)" }}
-                animate={{ clipPath: "circle(120% at 50% 50%)" }}
+                initial={{ opacity: 0, scale: 1.02 }}
+                animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, transition: { duration: 0.2 } }}
-                transition={{ duration: 0.9, ease: [0.76, 0, 0.24, 1] }}
+                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
               >
                 <Image src={img(m.photo, 900)} alt={`${m.first} ${m.last} — ${m.role}`} fill sizes="(min-width:1024px) 38vw, 90vw" className="object-cover" />
                 <span className="absolute top-5 left-5 font-mono text-xs tracking-[0.2em] text-paper/90">{m.id}</span>

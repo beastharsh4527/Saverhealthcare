@@ -15,7 +15,7 @@ export default function TeamPage() {
     <>
       <PageHero
         eyebrow={teamIntro.eyebrow}
-        title={<>Clinical <em className="text-mint">leadership</em> behind every placement.</>}
+        title={<>Clinical <em className="text-brand">leadership</em> behind every placement.</>}
         crumbs={[{ label: "Team" }]}
       />
       <Team />

@@ -7,8 +7,6 @@ import { offices } from "@/content/contact";
 import { SmoothScroll } from "@/components/providers/SmoothScroll";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { Preloader } from "@/components/experience/Preloader";
-import { Cursor } from "@/components/experience/Cursor";
 import { ScrollProgress } from "@/components/experience/ScrollProgress";
 import { isDemo } from "@/lib/utils";
 
@@ -56,8 +54,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         </a>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <SmoothScroll>
-          <Preloader />
-          <Cursor />
           <ScrollProgress />
           <Header />
           <main id="main">{children}</main>

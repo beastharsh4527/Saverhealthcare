@@ -15,7 +15,7 @@ export default function ProcessPage() {
     <>
       <PageHero
         eyebrow={processIntro.eyebrow}
-        title={<>One source, from first conversation to <em className="text-mint">first shift</em>.</>}
+        title={<>One source, from first conversation to <em className="text-brand">first shift</em>.</>}
         sub={processIntro.sub}
         crumbs={[{ label: "Process" }]}
       />

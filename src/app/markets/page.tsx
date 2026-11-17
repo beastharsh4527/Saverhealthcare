@@ -15,7 +15,7 @@ export default function MarketsPage() {
     <>
       <PageHero
         eyebrow={marketsIntro.eyebrow}
-        title={<>Trusted routes into three leading <em className="text-mint">healthcare systems</em>.</>}
+        title={<>Trusted routes into three leading <em className="text-brand">healthcare systems</em>.</>}
         sub={marketsIntro.sub}
         crumbs={[{ label: "Markets" }]}
       />

@@ -14,7 +14,7 @@ export default function ContactPage() {
     <>
       <PageHero
         eyebrow={contactIntro.eyebrow}
-        title={<>Three offices, one <em className="text-mint">global team</em>.</>}
+        title={<>Three offices, one <em className="text-brand">global team</em>.</>}
         sub={contactIntro.sub}
         crumbs={[{ label: "Contact" }]}
       />

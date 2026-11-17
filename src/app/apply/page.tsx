@@ -16,7 +16,7 @@ export default async function ApplyPage({ searchParams }: { searchParams: Promis
     <>
       <PageHero
         eyebrow={apply.eyebrow}
-        title={<>{apply.title.line1} <em className="text-mint">{apply.title.line2}</em></>}
+        title={<>{apply.title.line1} <em className="text-brand">{apply.title.line2}</em></>}
         sub={apply.sub}
         crumbs={[{ label: "Apply" }]}
       />

@@ -15,7 +15,7 @@ export default function SolutionsPage() {
     <>
       <PageHero
         eyebrow={solutionsIntro.eyebrow}
-        title={<>Tailored solutions for <em className="text-mint">candidates</em> and <em className="text-mint">employers</em>.</>}
+        title={<>Tailored solutions for <em className="text-brand">candidates</em> and <em className="text-brand">employers</em>.</>}
         sub={solutionsIntro.sub}
         crumbs={[{ label: "Solutions" }]}
       />

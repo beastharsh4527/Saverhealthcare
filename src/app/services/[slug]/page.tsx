@@ -40,7 +40,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         crumbs={[{ label: "Services", href: "/services" }, { label: s.title }]}
       >
         <ul className="flex flex-wrap gap-2">
-          {s.tags.map((t) => <li key={t} className="chip border-mint/40 text-mint">{t}</li>)}
+          {s.tags.map((t) => <li key={t} className="chip border-mint/40 text-brand">{t}</li>)}
         </ul>
       </PageHero>
 
@@ -71,11 +71,11 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               <Image src={img(s.photo, 1000)} alt={s.title} fill sizes="(min-width:1024px) 40vw, 90vw" className="object-cover" />
             </div>
             <div className="grid gap-3 rounded-3xl bg-ink p-7 text-paper">
-              <span className="font-mono text-[0.65rem] tracking-[0.2em] text-mint uppercase">Where we place</span>
+              <span className="font-mono text-[0.65rem] tracking-[0.2em] text-brand uppercase">Where we place</span>
               <ul className="grid gap-2">
                 {markets.map((m) => (
                   <li key={m.slug}>
-                    <Link href={`/markets/${m.slug}`} className="link-underline flex justify-between text-paper/85 hover:text-mint">
+                    <Link href={`/markets/${m.slug}`} className="link-underline flex justify-between text-paper/85 hover:text-brand">
                       <span>{m.country}</span><span className="text-fog">{m.cta}</span>
                     </Link>
                   </li>

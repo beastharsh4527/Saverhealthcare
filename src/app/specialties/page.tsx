@@ -15,7 +15,7 @@ export default function SpecialtiesPage() {
     <>
       <PageHero
         eyebrow={specialtiesIntro.eyebrow}
-        title={<>Specialties we recruit &amp; <em className="text-mint">deploy</em> across.</>}
+        title={<>Specialties we recruit &amp; <em className="text-brand">deploy</em> across.</>}
         sub={specialtiesIntro.sub}
         crumbs={[{ label: "Specialties" }]}
       />

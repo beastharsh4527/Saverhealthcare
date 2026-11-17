@@ -15,7 +15,7 @@ export default function ServicesPage() {
     <>
       <PageHero
         eyebrow={servicesIntro.eyebrow}
-        title={<>End-to-end workforce <em className="text-mint">mobility</em> for global healthcare.</>}
+        title={<>End-to-end workforce <em className="text-brand">mobility</em> for global healthcare.</>}
         sub={servicesIntro.sub}
         crumbs={[{ label: "Services" }]}
       />
